@@ -4,24 +4,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href= "style.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
 
-    <h1>how old are you ?</h1>
-    <form method="POST" action="/send">
-
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="numero1">
-          <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="numero2">
-
+    <header>
+    
+    <!--     <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Form</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+        </nav>
+-->
+    </header>    
+    
+    <content>
+    <form method="POST" action="/send" class="form-size">
+        <h1 class="title">Log In</h1>
+       
+        <div class="form-group form-center">
+            <input type="email" class="form-control" id="email" placeholder="Email / User">
         </div>
-
-        <input type="submit" value="submit">
-
-
-    </form>
-
-
+        <div class="form-group form-center">
+            <input type="password" class="form-control" id="pwd" placeholder="Password">
+        </div>
+        <div class="form-button"> 
+            <button id="singlebutton"  class="btn btn-outline-danger form-button-size">Log In</button>
+        </div>
+    </form>    
+    </content>
+    
+    <footer>
+    
+    
+    </footer>
+        
 
 </body>
 </html>
