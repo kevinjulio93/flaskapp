@@ -1,13 +1,18 @@
 from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
 import pymysql.cursors
 
 app = Flask(__name__)
 
-connection = pymysql.connect(host='localhost',
-                             user='root',
-                             password='252601993',
-                             db='Ormuco',
+#connection = pymysql.connect(host='localhost',
+#                            user='root',
+#                           password='252601993',
+#                          db='Ormuco',
+#                         charset='utf8mb4')
+
+connection = pymysql.connect(host='sql10.freemysqlhosting.net',
+                             user='sql10180646',
+                             password='CMVHyy9b3U',
+                             db='sql10180646',
                              charset='utf8mb4')
 
 
@@ -32,15 +37,9 @@ def add():
 
             return "saved sucesfully."
 
-        connection.close()
+        #connection.close()
 
     return render_template('index.html')
 
 
-@app.route("/get")
-def get():
-    return render_template("index-b.html")
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
