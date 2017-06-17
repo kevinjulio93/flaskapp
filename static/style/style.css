@@ -4,6 +4,7 @@ padding: 0;
 margin: 0;
 font-family: 'Droid Sans', sans-serif;
 
+
 }
 
 .form {
@@ -43,9 +44,21 @@ text-align: center;
 
 }
 
-.form-button-size{
+.form-size{
 
-width: 47% !important;
-margin-top: 5%;
+width: 500px;
+height: 500px;
+
+}
+
+.input-field label{
+
+color: #fff ;
+
+}
+
+.select-wrapper input.select-dropdown{
+
+color: #fff !important;
 
 }

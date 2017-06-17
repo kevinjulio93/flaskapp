@@ -4,13 +4,14 @@ import pymysql.cursors
 
 app = Flask(__name__)
 
-
 connection = pymysql.connect(host='localhost',
                              user='root',
                              password='252601993',
                              db='Ormuco',
                              charset='utf8mb4')
-                             #cursor=pymysql.cursors.DictCursor)
+
+
+# cursor=pymysql.cursors.DictCursor)
 
 @app.route("/", methods=['GET', 'POST'])
 def add():
@@ -20,22 +21,26 @@ def add():
         _favcolor = request.form['Favcolor']
         _cot = request.form['CoT']
 
-        try :
-            with connection.cursor() as cursor :
-                query = ( "INSERT INTO ormuco_form (name, favcolor, pet)" "VALUES (%s,%s,%s)")
-                data = (_name,_favcolor,_cot )
-                cursor.execute(query,data)
+        try:
+            with connection.cursor() as cursor:
+                query = ("INSERT INTO ormuco_form (name, favcolor, pet)" "VALUES (%s,%s,%s)")
+                data = (_name, _favcolor, _cot)
+                cursor.execute(query, data)
 
             connection.commit()
-        finally :
-            connection.close()
+        finally:
+
             return "saved sucesfully."
-        
 
-
+        connection.close()
 
     return render_template('index.html')
 
 
+@app.route("/get")
+def get():
+    return render_template("index-b.html")
+
+
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug=True)
