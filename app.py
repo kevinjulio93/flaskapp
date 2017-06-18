@@ -33,13 +33,18 @@ def add():
                 cursor.execute(query, data)
 
             connection.commit()
+            
         finally:
-
-            return "saved sucesfully."
+            with connection.cursor() as cursor:
+                query = ("SELECT * FROM ormuco_form ")
+                cursor.execute(query)
+                result = cursor.fetchone()
+                
+                return (result)
 
         #connection.close()
 
-    return render_template('index.html')
+    return render_template('index-b.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
