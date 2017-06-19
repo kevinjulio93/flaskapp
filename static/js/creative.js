@@ -61,7 +61,4 @@
         }
     });
 
-    $(document).ready(function() {
-    $('select').material_select();
-    });
 })(jQuery); // End of use strict
