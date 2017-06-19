@@ -1,0 +1,7 @@
+[PRODUCTION]
+database_name=Ormuco
+connection_string=mysql://root:root@localhost/Ormuco
+
+[TEST]
+database_name=Ormuco
+connection_string=mysql://root:root@localhost/Ormuco

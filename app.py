@@ -3,7 +3,7 @@ import pymysql.cursors
 
 app = Flask(__name__)
 
-#connection = pymysql.connect(host='localhost',
+# connection = pymysql.connect(host='localhost',
 #                            user='root',
 #                           password='252601993',
 #                          db='Ormuco',
@@ -33,19 +33,19 @@ def add():
                 cursor.execute(query, data)
 
             connection.commit()
-            
+
         finally:
             with connection.cursor() as cursor:
                 query = ("SELECT * FROM ormuco_form ")
                 cursor.execute(query)
                 result = cursor.fetchone()
-                
-                return (result)
 
-        #connection.close()
+                # return (result)
 
-    return render_template('index-b.html')
+                # connection.close()
+
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
-	app.run(debug=True)
-
+    app.run(debug=True)
