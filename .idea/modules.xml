@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../ansible-p/.idea/ansible-p.iml" filepath="$PROJECT_DIR$/../../ansible-p/.idea/ansible-p.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/flaskapp.iml" filepath="$PROJECT_DIR$/.idea/flaskapp.iml" />
     </modules>
   </component>
