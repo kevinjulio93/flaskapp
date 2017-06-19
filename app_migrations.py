@@ -3,11 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from db_create import db_name
+
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:252601993@localhost/'+db_name
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:252601993@localhost/Ormuco'
 db = SQLAlchemy(app)
 
 
@@ -23,7 +23,7 @@ class User(db.Model):
     favcolor = db.Column(db.String(255), unique=False)
     pet = db.Column(db.String(255), unique=False)
 
-    def __init__(self, name, favcolor, pet ):
+    def __init__(self, name, favcolor, pet):
         self.name = name
         self.favcolor = favcolor
         self.pet = pet

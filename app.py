@@ -5,8 +5,9 @@ from sqlalchemy import exc
 
 app = Flask(__name__)
 
-db = SQLAlchemy().session
+db = SQLAlchemy()
 from app_migrations import *
+
 
 # connection = pymysql.connect(host='localhost',
 #                              user='root',
@@ -17,7 +18,7 @@ from app_migrations import *
 
 @app.route("/", methods=['GET', 'POST'])
 def add():
-    mensaje =""
+    mensaje = ""
     if request.method == 'POST':
         _name = request.form['Name']
         _favcolor = request.form['Favcolor']
@@ -26,19 +27,18 @@ def add():
         data = User(_name, _favcolor, _cot)
 
         try:
-            db.add(data)
-            db.commit()
+            db.session.add(data)
+            db.session.commit()
             mensaje = 'Saved Sucesfully'
         except exc.IntegrityError:
-            db.rollback()
+            db.session.rollback()
             mensaje = "The name already exist, please set an other"
         finally:
-            db.close()
+            db.session.close()
 
     q = User.query.all()
-    return render_template('index.html', querys=q, msn = mensaje)
+    return render_template('index.html', querys=q, msn=mensaje)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0')
