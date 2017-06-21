@@ -20,9 +20,9 @@ from app_migrations import *
 def add():
 
     msg = ""    # to show message data saved or not
-#    val_m = ""  # to display validation message
+    val_m = ""  # to display validation message
 
-#    val = re.compile("^[a-zA-Z ]*$")
+    val = re.compile("^[a-zA-Z ]*$")
 
     if request.method == 'POST':
 
@@ -30,20 +30,29 @@ def add():
         _favcolor = request.form['Favcolor']
         _cot = request.form['CoT']
 
-        data = User(_name, _favcolor, _cot)
+        if not val.match(_name):
+            val_m ="Enter text only, don't enter characters"
+        else:
+            if not val.match(_favcolor):
+                val_m = "Enter text only, don't enter characters"
+            else:
+                if _cot == "none":
+                    val_m = "Please select one pet cat or dog "
+                else:
+                    data = User(_name, _favcolor, _cot)
 
-        try:
-            db.session.add(data)
-            db.session.commit()
-            msg = 'Saved Sucesfully'
-        except exc.IntegrityError:
-            db.session.rollback()
-            msg = "The name already exist, please set an other"
-        finally:
-            db.session.close()
+                    try:
+                        db.session.add(data)
+                        db.session.commit()
+                        msg = 'Saved Sucesfully'
+                    except exc.IntegrityError:
+                        db.session.rollback()
+                        msg = "The name already exist, please set an other"
+                    finally:
+                        db.session.close()
 
     q = User.query.all()
-    return render_template('index.html', querys=q, msn=msg)
+    return render_template('index.html', querys=q, msn=msg, er=val_m)
 
 
 if __name__ == '__main__':

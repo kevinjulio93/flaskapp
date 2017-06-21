@@ -120,28 +120,26 @@
                     <div class="input-field col s12 m12">
 
                         <a class="waves-effect waves-light btn mi-btn">{{msn}}</a>
-                        <a class="waves-effect waves-light btn mi-btn">{{validation}}</a>
+                        <a class="waves-effect waves-light btn mi-btn">{{er}}</a>
 
                     </div>
 
                     <div class="input-field col s12 m12">
 
-                        <input id="icon_prefix" type="text" class="validate" id="Name" name="Name" required=""
-                               pattern="^[a-zA-Z ]*$">
+                        <input id="icon_prefix" type="text" class="validate" id="Name" name="Name" required="">
                         <label for="icon_prefix">Name</label>
                     </div>
 
                     <div class="input-field col s12 m12">
 
-                        <input id="icon_email" type="text" class="validate" id="Favcolor" name="Favcolor" required=""
-                               pattern="^[a-zA-Z ]*$">
+                        <input id="icon_email" type="text" class="validate" id="Favcolor" name="Favcolor" required="">
+                               <!--pattern="^[a-zA-Z ]*$"-->
                         <label for="icon_email">Favorite Color</label>
                     </div>
 
                     <div class="input-field col s12 m12">
-                        <select id="CoT" name="CoT" required=""
-                                oninvalid="setCustomValidity(' must contain only letters')">
-                            <option value="" disabled selected>Choose your pet</option>
+                        <select id="CoT" name="CoT" >
+                            <option value="none" >Choose your pet</option>
                             <option value="Cat" class="left circle">Cat</option>
                             <option value="Dog" class="left circle">Dog</option>
                         </select>
@@ -225,24 +223,26 @@
     </div>
     <div class="container">
         <div class="col-lg-12 col-md-12 text-center">
-            <div class="service-box">
-                <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                <h3></h3>
-                <p class="text-muted">You can read the documentation where yo can find out all requirements to install
-                    or deploy the test application using ansible playbook </p>
-            </div>
+
         </div>
-        <div class="col-lg-6 col-md-6 text-center">
+
+        <div class="col-lg-4 col-md-4 text-center">
+            <a class="fa fa-4x fa fa-github text-primary sr-icons" href="https://github.com/kevinjulio93/flaskapp"></a>
+            <h3 class="section-heading">Github. </h3>
+
+            <a href="https://github.com/kevinjulio93/flaskapp">Click here if you want clone the test</a>
+        </div>
+        <div class="col-lg-4 col-md-4 text-center">
             <a class="fa fa-4x fa fa-book text-primary sr-icons" href="https://kevinjulio93.gitbooks.io/deploy-ormuco-test/content/"></a>
-            <h3 class="section-heading">Go to Gitbook</h3>
-            <hr class="primary">
+            <h3 class="section-heading">Gitbook.</h3>
+
             <a href="https://kevinjulio93.gitbooks.io/deploy-ormuco-test/content/"> Click here to read the docs</a>
         </div>
-        <div class="col-lg-6 col-md-6 text-center">
-            <a class="fa fa-4x fa fa-github text-primary sr-icons" href="https://github.com/kevinjulio93/flaskapp"></a>
-            <h3 class="section-heading">Go to Github</h3>
-            <hr class="primary">
-            <a href="https://github.com/kevinjulio93/flaskapp">Click here if you want clone the test</a>
+        <div class="col-lg-4 col-md-4 text-center">
+            <a class="fa fa-4x fa fa-github text-primary sr-icons" href="https://github.com/kevinjulio93/ansibles-ormuco-test"></a>
+            <h3 class="section-heading">Github.</h3>
+
+            <a href="https://github.com/kevinjulio93/flaskapp">Click here if you want clone the ansible repository</a>
         </div>
 
 
@@ -270,7 +270,7 @@
                 <p>Here you con see more about me, how iam, my jobs, my hobbies, everything you want to know about
                     me</p>
             </div>
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-4 col-md-4 text-center">
                 <div class="service-box">
                     <a class="fa fa-4x fa fa-facebook text-primary sr-icons"
                        href="https://www.facebook.com/kevinjulio93"></a>
@@ -278,7 +278,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-4 col-md-4 text-center">
                 <div class="service-box">
                     <a class="fa fa-4x fa fa-linkedin text-primary sr-icons"
                        href="https://wwwlinkedin.com/in/kevinjulio93/"></a>
@@ -286,7 +286,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 text-center">
+            <div class="col-lg-4 col-md-4 text-center">
                 <div class="service-box">
                     <a class="fa fa-4x fa fa-twitter text-primary sr-icons"
                        href="https://wwwtwitter.com/kevinjulio93"></a>
