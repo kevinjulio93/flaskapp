@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import exc
+import re
 
 app = Flask(__name__)
 
@@ -18,8 +18,14 @@ from app_migrations import *
 
 @app.route("/", methods=['GET', 'POST'])
 def add():
-    mensaje = ""
+
+    msg = ""    # to show message data saved or not
+#    val_m = ""  # to display validation message
+
+#    val = re.compile("^[a-zA-Z ]*$")
+
     if request.method == 'POST':
+
         _name = request.form['Name']
         _favcolor = request.form['Favcolor']
         _cot = request.form['CoT']
@@ -29,16 +35,16 @@ def add():
         try:
             db.session.add(data)
             db.session.commit()
-            mensaje = 'Saved Sucesfully'
+            msg = 'Saved Sucesfully'
         except exc.IntegrityError:
             db.session.rollback()
-            mensaje = "The name already exist, please set an other"
+            msg = "The name already exist, please set an other"
         finally:
             db.session.close()
 
     q = User.query.all()
-    return render_template('index.html', querys=q, msn=mensaje)
+    return render_template('index.html', querys=q, msn=msg)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

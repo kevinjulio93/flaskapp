@@ -23,33 +23,17 @@ padding: 5px;
 
 .form-size{
 
-width: 50%;
+width: 500px;
+height: 500px;
 margin: 0 auto;
-margin-top: 10%;
-height: 50%;
+
+
 }
 
-.form-center{
-
-margin: 0 auto;
-width: 47%;
-padding: 0;
-margin-top: 5px;
-
-}
 
 .form-button {
 
 text-align: center;
-
-}
-
-.form-size{
-
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    
 
 }
 
@@ -90,5 +74,18 @@ color: #fff !important;
     margin: 0 !important;
     padding: 0;
 
+
+}
+
+
+.header .header-content > img {
+
+width : 100%;
+
+}
+
+.service-box{
+
+    max-width: 700px !important;
 
 }

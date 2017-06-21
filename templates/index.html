@@ -47,6 +47,22 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!--<script type="text/javascript">-->
+    <!--function validate() {-->
+    <!--var name = document.getElemntById.('Name').value-->
+    <!--var color = document.getElemntById.('Favcolor').value-->
+    <!--var pet = document.getElemntById.('CoT').value-->
+    <!--var re = new RegExp("[a-zA-Z ]*$");-->
+
+    <!--if (name == ""){-->
+
+    <!--alert("please choose a pet")-->
+    <!--return false-->
+
+    <!--}-->
+
+    <!--</script>-->
+
 </head>
 
 <body id="page-top">
@@ -78,9 +94,7 @@
                 <li>
                     <a class="page-scroll" href="#services">Documentation</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#download">download</a>
-                </li>
+
 
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
@@ -101,33 +115,37 @@
         </div>
 
         <div class="row form-size">
-            <form method="post" class="col s12 m12">
+            <form method="post" class="col s12 m12" onsubmit="return validate()">
                 <div class="row">
                     <div class="input-field col s12 m12">
 
                         <a class="waves-effect waves-light btn mi-btn">{{msn}}</a>
+                        <a class="waves-effect waves-light btn mi-btn">{{validation}}</a>
 
                     </div>
 
                     <div class="input-field col s12 m12">
 
-                        <input id="icon_prefix" type="text" class="validate" id="Name" name="Name">
+                        <input id="icon_prefix" type="text" class="validate" id="Name" name="Name" required=""
+                               pattern="^[a-zA-Z ]*$">
                         <label for="icon_prefix">Name</label>
                     </div>
 
                     <div class="input-field col s12 m12">
 
-                        <input id="icon_email" type="text" class="validate" id="Favcolor" name="Favcolor">
+                        <input id="icon_email" type="text" class="validate" id="Favcolor" name="Favcolor" required=""
+                               pattern="^[a-zA-Z ]*$">
                         <label for="icon_email">Favorite Color</label>
                     </div>
 
                     <div class="input-field col s12 m12">
-                        <select id="CoT" name="CoT">
-                            <option value="" disabled selected></option>
+                        <select id="CoT" name="CoT" required=""
+                                oninvalid="setCustomValidity(' must contain only letters')">
+                            <option value="" disabled selected>Choose your pet</option>
                             <option value="Cat" class="left circle">Cat</option>
                             <option value="Dog" class="left circle">Dog</option>
                         </select>
-                        <label>Choose your pet</label>
+                        <label>pet</label>
                     </div>
 
 
@@ -206,36 +224,29 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                    <h3>Sturdy Templates</h3>
-                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                    <h3>Ready to Ship</h3>
-                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                    <h3>Up to Date</h3>
-                    <p class="text-muted">We update dependencies to keep things fresh.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                    <h3>Made with Love</h3>
-                    <p class="text-muted">You have to make your websites with love these days!</p>
-                </div>
+        <div class="col-lg-12 col-md-12 text-center">
+            <div class="service-box">
+                <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                <h3></h3>
+                <p class="text-muted">You can read the documentation where yo can find out all requirements to install
+                    or deploy the test application using ansible playbook </p>
             </div>
         </div>
+        <div class="col-lg-6 col-md-6 text-center">
+            <a class="fa fa-4x fa fa-book text-primary sr-icons" href="https://kevinjulio93.gitbooks.io/deploy-ormuco-test/content/"></a>
+            <h3 class="section-heading">Go to Gitbook</h3>
+            <hr class="primary">
+            <a href="https://kevinjulio93.gitbooks.io/deploy-ormuco-test/content/"> Click here to read the docs</a>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center">
+            <a class="fa fa-4x fa fa-github text-primary sr-icons" href="https://github.com/kevinjulio93/flaskapp"></a>
+            <h3 class="section-heading">Go to Github</h3>
+            <hr class="primary">
+            <a href="https://github.com/kevinjulio93/flaskapp">Click here if you want clone the test</a>
+        </div>
+
+
+    </div>
     </div>
 </section>
 
@@ -254,21 +265,36 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <h2 class="section-heading">Contact to Me</h2>
                 <hr class="primary">
-                <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we
-                    will get back to you as soon as possible!</p>
+                <p>Here you con see more about me, how iam, my jobs, my hobbies, everything you want to know about
+                    me</p>
             </div>
-            <div class="col-lg-4 col-lg-offset-2 text-center">
-                <i class="fa fa-phone fa-3x sr-contact"></i>
-                <p>123-456-6789</p>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <a class="fa fa-4x fa fa-facebook text-primary sr-icons"
+                       href="https://www.facebook.com/kevinjulio93"></a>
+                    <h3></h3>
+
+                </div>
             </div>
-            <div class="col-lg-4 text-center">
-                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <a class="fa fa-4x fa fa-linkedin text-primary sr-icons"
+                       href="https://wwwlinkedin.com/in/kevinjulio93/"></a>
+                    <h3></h3>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="service-box">
+                    <a class="fa fa-4x fa fa-twitter text-primary sr-icons"
+                       href="https://wwwtwitter.com/kevinjulio93"></a>
+                    <h3></h3>
+
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 <!-- jQuery -->
