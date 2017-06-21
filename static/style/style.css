@@ -89,3 +89,13 @@ width : 100%;
     max-width: 700px !important;
 
 }
+
+.size-img{
+
+    width: 70%;
+}
+
+.navbar-default .navbar-header .navbar-brand{
+
+    color : #fff !important;
+}

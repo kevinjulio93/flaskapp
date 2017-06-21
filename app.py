@@ -18,8 +18,8 @@ from app_migrations import *
 
 @app.route("/", methods=['GET', 'POST'])
 def add():
-
-    msg = ""    # to show message data saved or not
+    msg_s = ""  # to show message data saved or not
+    msg_er = ""  # to show message data saved or not
     val_m = ""  # to display validation message
 
     val = re.compile("^[a-zA-Z ]*$")
@@ -31,7 +31,7 @@ def add():
         _cot = request.form['CoT']
 
         if not val.match(_name):
-            val_m ="Enter text only, don't enter characters"
+            val_m = "Enter text only, don't enter characters"
         else:
             if not val.match(_favcolor):
                 val_m = "Enter text only, don't enter characters"
@@ -39,20 +39,21 @@ def add():
                 if _cot == "none":
                     val_m = "Please select one pet cat or dog "
                 else:
+
                     data = User(_name, _favcolor, _cot)
 
                     try:
                         db.session.add(data)
                         db.session.commit()
-                        msg = 'Saved Sucesfully'
+                        msg_s = 'Saved Sucesfully'
                     except exc.IntegrityError:
                         db.session.rollback()
-                        msg = "The name already exist, please set an other"
+                        msg_er = "The name already exist, please set an other"
                     finally:
                         db.session.close()
 
     q = User.query.all()
-    return render_template('index.html', querys=q, msn=msg, er=val_m)
+    return render_template('index.html', querys=q, msn_s=msg_s, msn_er=msg_er, er=val_m)
 
 
 if __name__ == '__main__':
