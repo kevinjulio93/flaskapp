@@ -45,7 +45,7 @@ def add():
                     try:
                         db.session.add(data)
                         db.session.commit()
-                        msg_s = 'Saved Sucesfully'
+                        msg_s = 'Saved Sucesfully, Click Here'
                     except exc.IntegrityError:
                         db.session.rollback()
                         msg_er = "The name already exist, please set an other"
